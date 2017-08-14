@@ -1,0 +1,208 @@
+body {
+    height: 100%;
+    margin: 0;
+    font-family: Roboto, Georgia, "Times New Roman";
+    font-size: 25px;
+    color:darkslategray;
+    background: red; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left top, grey, white); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, white, grey); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, white, grey); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom right, grey, white); /* Standard syntax */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+div {
+    -webkit-box-sizing: border-box; /* Safari */
+    -moz-box-sizing: border-box; /* Firefox */
+    -ms-box-sizing: border-box; /* IE */
+    box-sizing: border-box;
+}
+
+#main {
+    width: 1000px;
+    height: 1000px;
+    margin: auto;
+}
+
+/* square div and children */
+#square {
+    background-image: url(Images/background.jpg);
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100%;
+}
+
+#row1,
+#row2,
+#row3,
+#row4 {
+    width: 100%;
+    height: 25%;
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#row1 > div,
+#row2 > div,
+#row3 > div,
+#row4 > div {
+    -webkit-flex: 1 1;  /* Safari 6.1+ */
+    -ms-flex: 1 1;  /* IE 10 */
+    flex: 1 1;
+    -webkit-perspective: 500;
+    perspective: 500;
+    width: 100%;
+    height: 80%;
+}
+
+/* css code to flip cards based on https://stackoverflow.com/questions/16274030/jquery-function-to-flip-an-image-on-click */
+.card { 
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: all 1.0s linear;
+    -moz-transform-style: preserve-3d;
+    -moz-transition: all 1.0s linear;
+    transform-style: preserve-3d;
+    transition: all 1.0s linear;
+}
+
+#row1 > div.active .card,
+#row2 > div.active .card,
+#row3 > div.active .card,
+#row4 > div.active .card {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+#row1 > div:not(.active) .card:hover,
+#row2 > div:not(.active) .card:hover,
+#row3 > div:not(.active) .card:hover,
+#row4 > div:not(.active) .card:hover {
+    cursor: pointer;
+}
+
+.face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    background-image: url(Images/card.jpg);
+    background-size: 100% 100%;
+    border-radius: 20px;
+}
+
+.back img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.back {
+    display: block;
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    background: white;
+}
+
+/* Header and children */
+#header {
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+#header > p, #header > div {
+    -webkit-flex: 1 1 0;  /* Safari 6.1+ */
+    -ms-flex: 1 1 0;  /* IE 10 */    
+    flex: 1 1 0;
+}
+
+#header > div > div {
+    margin: auto;
+    width: 50px;
+    height: 50px;
+}
+
+#restart > div {
+    background-image: url(Images/Restart.png);
+    background-size: 100% 100%; 
+}
+
+#save > div {
+    background-image: url(Images/Save.png);
+    background-size: 100% 100%; 
+}
+
+#resume > div {
+    background-image: url(Images/Continue.png);
+    background-size: 100% 100%; 
+}
+
+#header > div > div:hover {
+    cursor: pointer;
+}
+
+/* Media query to resize the main div */
+@media screen and (max-width: 1020px) {
+    #main {
+        width: 900px;
+        height: 900px;
+    }
+}
+
+@media screen and (max-width: 920px) {
+    #main {
+        width: 800px;
+        height: 800px;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    #main {
+        width: 700px;
+        height: 700px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    #main {
+        width: 600px;
+        height: 600px;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    #main {
+        width: 500px;
+        height: 500px;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    #main {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    #main {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    #main {
+        width: 300px;
+        height: 300px;
+    }
+}

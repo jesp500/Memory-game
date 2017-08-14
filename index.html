@@ -1,0 +1,47 @@
+<!doctype HTML>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Memory Game</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div id="main">
+            <!-- Div containing the timer, number of moves, ratings and buttons to save, restart and resume the game -->
+            <div id="header">
+                <p id="timer">00:00:00</p>
+                <p id="moves">0 moves</p>
+                <p id="rating"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></p>
+                <div id="save">
+                    <div title="Save your current game"></div>
+                </div>
+                <div id="restart">
+                    <div title="Restart the game"></div>
+                </div>
+                <div id="resume">
+                    <div title="Resume the last game saved"></div>
+                </div>
+            </div>
+            <!-- Images contained in the square div courtesy of http://www.iconarchive.com/ 
+            The File script.js will append to #square the html with the rows containing the cards, which were put into the square randomly    -->
+            <div id="square">
+            </div>
+            <!-- Modal asking the user for permission when he/she tries to restart the game -->
+            <div id="dialog">
+                <p>Are you sure you want to restart the game? All your progress will be lost.</p>
+            </div>
+            <!-- Modal stating to the user that he/she has won -->
+            <div id="winning">
+                <p></p>
+            </div>
+            <!-- Modal asking for permission before saving the game. -->
+            <div id="saving">
+                <p>Are you sure you want to save the current game. The previous saved game will be overwritten with the new one.</p>
+            </div>
+        </div>        
+    </body>
+</html>
