@@ -111,7 +111,9 @@ jQuery(document).ready(function ($) {
                         startGame(total);
                         $( this ).dialog( "close" );		
                     }
-                }
+                },
+                width: "90%",
+                modal: true
             },
             countingTime = setInterval(function(){ Counter() }, 1000),
             secondDialogBox = {
@@ -121,7 +123,9 @@ jQuery(document).ready(function ($) {
                         saveGame(total);
                         $( this ).dialog( "close" );
                     }
-                }
+                },
+                width: "90%",
+                modal: true
             };
         $('#dialog').dialog(firstDialogBox);
 	    $('#winning').dialog(firstDialogBox);
@@ -194,7 +198,8 @@ jQuery(document).ready(function ($) {
         //Put a brief text into the modal after completing the game, with the number of moves and time.
         moves = moves.split(' ');
         moves = (parseInt(moves[0]) + 1) + ' moves';
-        var html = "Congratulations, you've won the game with " + moves + ". It took you " + amountTime + " to complete the game. Do you want to play one more time?</p>";
+        var rating = $('#rating').html(),
+            html = "Congratulations, you've won the game with " + moves + ". It took you " + amountTime + " to complete the game. Your game was rated " + rating + ". Do you want to play one more time?";
         $('#winning').find('p').html(html).end().dialog('open');
     }
     var cards = ['Baseball','Basketball','Golf','Running','Skiing','Soccer','Volleyball','Yoga'],

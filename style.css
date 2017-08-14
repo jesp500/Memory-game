@@ -184,6 +184,14 @@ div {
         width: 500px;
         height: 500px;
     }
+    .face {
+        border-radius: 15px;
+    }
+    #header > p {
+        -webkit-flex: 1 1 33%;  /* Safari 6.1+ */
+        -ms-flex: 1 1 33%;  /* IE 10 */    
+        flex: 1 1 33%;
+    }
 }
 
 @media screen and (max-width: 520px) {
@@ -197,6 +205,14 @@ div {
     #main {
         width: 300px;
         height: 300px;
+    }
+    .face {
+        border-radius: 10px;
+    }
+    #header > p {
+        -webkit-flex: 1 1 100%;  /* Safari 6.1+ */
+        -ms-flex: 1 1 100%;  /* IE 10 */    
+        flex: 1 1 100%;
     }
 }
 
